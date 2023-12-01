@@ -1,5 +1,14 @@
 
 
+export async function generateStaticParams(){
+    const res = await fetch('http://localhost:4000/tickets')
+    const tickets = await res.json()
+
+    return tickets.map((ticket)=>({
+        id:ticket.id
+    }))
+}
+
 async function getTickets(id) {
     const res = await fetch('http://localhost:4000/tickets/' + id, {
         next: {
