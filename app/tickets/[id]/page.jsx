@@ -1,6 +1,7 @@
 
 
 export async function generateStaticParams(){
+    
     const res = await fetch('http://localhost:4000/tickets')
     const tickets = await res.json()
 
